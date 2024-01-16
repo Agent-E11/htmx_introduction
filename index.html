@@ -44,7 +44,27 @@
     
     <hr>
 
-    <button hx-get="lorem.html"></button>
+    <button hx-get="https://hub.dummyapis.com/delay?seconds=3"
+        hx-trigger="click">
+        Click me!
+        <img width="60px" height="20" class="htmx-indicator" src="/svg-loaders/three-dots.svg">
+    </button>
+    <div id="disappear" style="display: none;"></div>
+
+    <hr>
+
+    <button id="request-button"
+        hx-get="https://hub.dummyapis.com/delay?seconds=5"
+        hx-target="#long-request-content"
+        hx-swap="innerHTML"
+        hx-indicator="#long-request-indicator">
+        Issue long request
+    </button>
+    <button onclick="htmx.trigger('#request-button', 'htmx:abort')">
+        Abort request
+    </button>
+    <div id="long-request-content"></div>
+    <img id="long-request-indicator" class="htmx-indicator" src="/svg-loaders/ball-triangle.svg">
 
     <!-- HTMX Script -->
     <script src="https://unpkg.com/htmx.org@1.9.10"
