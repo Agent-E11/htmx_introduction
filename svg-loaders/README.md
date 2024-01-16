@@ -1,3 +1,5 @@
+> Original repo: https://github.com/SamHerbert/SVG-Loaders
+
 Example
 ===========
 All loaders may be previewed at:
